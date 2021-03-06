@@ -1,13 +1,27 @@
-<cdk-drop>
+<div class="addButton">
+    <button mat-flat-button color="primary" (click)="addButtonClick()">Basic</button>
     <ul>
-      <li cdkDrag>
-        <label>Tour of Heroes</label>
-      </li>
-      <li cdkDrag>
-        <label>CLI Documentation</label>
-      </li>
-      <li cdkDrag>
-        <label>Angular blog</label>
-      </li>
+        <div class="aaaObject">
+            <div cdkDrag (cdkDragEnded)="dragEnd($event)" *ngFor="let object of Objects">
+                <label>{{object.name}}</label>
+            </div>
+        </div>
+
+        <div  class="bbbObject">
+            <div cdkDrag (cdkDragEnded)="dragEnd($event)" *ngFor="let object of Objects">
+                <label>{{object.name}}</label>
+            </div>
+        </div>
+        <!--
+        <li cdkDrag (cdkDragEnded)="dragEnd($event)">
+            <label>Tour of Heroes</label>
+        </li>
+        <li cdkDrag>
+            <label>CLI Documentation</label>
+        </li>
+        <li cdkDrag>
+            <label>Angular blog</label>
+        </li>
+        <li cdkDrag *ngIf="object">{{object.name}}</li>-->
     </ul>
-    </cdk-drop>
+</div>

@@ -12,6 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     BrowserModule,
     AppRoutingModule,
     DragDropModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
