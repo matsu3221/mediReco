@@ -1,14 +1,23 @@
 <div class="addButton">
+    
+    <mat-form-field>
+        <mat-select (selectionChange)=getSelectedValue($event)>
+            <mat-option *ngFor="let doress of doresses" [value]="doress.value">
+              {{doress.viewValue}}
+            </mat-option>
+          </mat-select>
+    </mat-form-field>
+
     <button mat-flat-button color="primary" (click)="addButtonClick()">Basic</button>
     <ul>
         <div class="aaaObject">
-            <div cdkDrag (cdkDragEnded)="dragEnd($event)" *ngFor="let object of Objects">
+            <div cdkDrag (cdkDragEnded)="dragEnd($event)" *ngFor="let object of objects">
                 <label>{{object.name}}</label>
             </div>
         </div>
 
         <div  class="bbbObject">
-            <div cdkDrag (cdkDragEnded)="dragEnd($event)" *ngFor="let object of Objects">
+            <div cdkDrag (cdkDragEnded)="dragEnd($event)" *ngFor="let object of objects">
                 <label>{{object.name}}</label>
             </div>
         </div>

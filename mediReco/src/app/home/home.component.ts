@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import {CdkDragDrop,CdkDrag,CdkDragEnd} from '@angular/cdk/drag-drop';
-import {Object} from '../object';
+import {CdkDragEnd} from '@angular/cdk/drag-drop';
+import { Object } from '../object';
+import { ObjectService } from '../object.service';
+import { doress } from '../doress';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-home',
@@ -10,17 +12,20 @@ import {Object} from '../object';
 })
 export class HomeComponent implements OnInit {
 
-  Objects: Object[] =[
-    {name: 'aaa'},
-    {name: 'bbb'}
-  ]
+   selectObject:Object;
+   objects:Object[] = [];
+   addNum:number = 1;
+   doress:doress;
+   value:string="トップス";
 
-  constructor() { 
-    var Objects: Object[] =[
-      {name: 'aaa'},
-      {name: 'bbb'}
-    ]
-  }
+   doresses = [
+    {value: '001', viewValue: 'トップス'},
+    {value: '002', viewValue: 'アウター'},
+    {value: '003', viewValue: 'ボトム'},
+    {value: '004', viewValue: 'バッグ'}
+  ];
+
+  constructor(private objectService:ObjectService) { }
 
   ngOnInit(): void {
   }
@@ -37,6 +42,17 @@ export class HomeComponent implements OnInit {
   }
 
   addButtonClick(){
-    console.log("add!")  
+    if(this.value == '001'){
+      this.selectObject = {
+        name:'add'+this.addNum.toString()
+      }
+      this.addNum = this.addNum + 1;
+      this.objects.push(this.selectObject)
+    }
+  }
+
+  getSelectedValue($event: MatSelectChange){
+    this.value = $event.value
+    console.log(this.value)
   }
 }

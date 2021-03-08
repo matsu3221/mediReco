@@ -11,8 +11,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';  // <-- 追加
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {MatButtonModule} from '@angular/material/button';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import {MatButtonModule} from '@angular/material/button';
     AppRoutingModule,
     DragDropModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
