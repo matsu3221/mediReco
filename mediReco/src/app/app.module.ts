@@ -15,12 +15,14 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { CoordinationComponent } from './coordination/coordination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
-    HomeComponent
+    HomeComponent,
+    CoordinationComponent
   ],
   imports: [
     BrowserModule,

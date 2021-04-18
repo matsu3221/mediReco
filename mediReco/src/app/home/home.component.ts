@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     {value: '001', viewValue: 'トップス'},
     {value: '002', viewValue: 'ボトムス'},
     {value: '003', viewValue: 'アウター'}
-  ];
+    ];
   @ViewChild('dustBox') dustBox
 
   constructor(public objectService:ObjectService,public bottoms:BottomsService,public tops:TopsService,public outers:OuterService) { }

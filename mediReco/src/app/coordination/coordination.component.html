@@ -1,0 +1,26 @@
+<!--<div class="addButton">-->
+    <div id="inputSet">
+        <mat-form-field>
+                <mat-select (selectionChange)=getSelectedValue($event)>
+                    <mat-option *ngFor="let doress of doresses" [value]="doress.value">
+                        {{doress.viewValue}}
+                    </mat-option>
+                </mat-select>
+        </mat-form-field>
+        <button mat-flat-button color="primary" (click)="viewButtonClick()">VIEW</button>
+            <img id="dustBox" class="dastBox" type="image" src="../../assets/ごみ箱のフリーアイコン.png">
+        <!-- <img id="dustBox" class="dastBox" type="image" src="../../assets/ごみ箱のフリーアイコン.png" width="50" height="50"> -->
+    </div>
+    <div *ngIf="show">
+        <div class="aaaObject">
+            <!--<div cdkDrag (cdkDragEnded)="dragEnd($event)" *ngFor="let tops of this.tops.topes">-->
+            <div cdkDrag (cdkDragMoved)="dragEnd($event)" id={{tops.no}} *ngFor="let tops of this.tops.topes">
+                <label class='imgLabel'>{{tops.kind}}</label>
+                <br>
+                <div>
+                    <img class='tops' src='../../assets/Yシャツアイコン2.png' alt={{tops.kind}} [innerHTML]=tops.no>
+                </div>
+            </div>
+        </div>
+    </div>
+<label>cordination画面です</label>
